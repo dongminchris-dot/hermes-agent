@@ -25,7 +25,7 @@ COPY . /opt/hermes
 WORKDIR /opt/hermes
 
 # Install Node dependencies and Playwright as root (--with-deps needs apt)
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get install -y nodejs
 RUN npm install --prefer-offline --no-audit --registry=https://registry.npmmirror.com && \
     npx playwright install --with-deps chromium --only-shell && \
     cd /opt/hermes/scripts/whatsapp-bridge && \
